@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script defer src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly"
+    ></script>
+    <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;
+        /* The height is 400 pixels */
+        width: 100%;
+        /* The width is the width of the web page */
+      }
+    </style>
+    <script>
+     // Initialize and add the map
+     function initMap() {
+     // The location of Uluru
+     const uluru = { lat: 39.113014, lng: -105.358887 };
+     // The map, centered at Uluru
+    const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 6,
+    center: uluru,
+      });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+  });
+      }
+    </script>
+  </head>
+  <body>
+    <h3>Colorado!!!</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+  </body>
+</html>
